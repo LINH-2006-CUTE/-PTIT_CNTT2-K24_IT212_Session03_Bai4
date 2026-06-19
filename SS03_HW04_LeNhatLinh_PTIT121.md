@@ -1,0 +1,10 @@
+1. Đáp án lựa chọn:C
+2. Phân tích chi tiết tại sao Phương án C tối ưu nhất
+Giữ nguyên phiên chat cũ (Bảo toàn Ngữ cảnh): Đây là hành động cốt lõi trong Iterative Prompting. Việc giữ nguyên phiên chat giúp LLM (Large Language Model) lưu lại bộ nhớ ngắn hạn (Context Window). AI sẽ hiểu rõ cấu trúc hàm nguyên bản, đích đến của đoạn code ban đầu và không bắt người dùng phải cung cấp lại toàn bộ bối cảnh từ đầu.Nhận diện lỗi và phản hồi trực tiếp (Feedback Loop): Thay vì đưa ra câu lệnh mơ hồ, lập trình viên đã chỉ rõ điểm nghẽn hiệu năng (Bottleneck): "vòng lặp chạy đến n-1 quá chậm đối với số lớn". Việc này giúp AI khu trú được chính xác phân đoạn mã nguồn cần cải tiến.Đưa ra chỉ dẫn kỹ thuật bổ sung rõ ràng (Refine Instructions): Người dùng trực tiếp gợi ý giải pháp nâng cao: "yêu cầu sửa vòng lặp chỉ chạy đến căn bậc hai của n". Đồng thời giải thích lợi ích thuật toán bằng ngôn ngữ toán học kỹ thuật: "giảm độ phức tạp thuật toán từ $O(n)$ xuống $O(\sqrt{n})$".Kết quả: Sự kết hợp giữa việc chỉ lỗi + hướng dẫn giải pháp trong cùng một ngữ cảnh có sẵn sẽ ép AI tối ưu hóa mã nguồn một cách xuất sắc, tạo ra hàm kiểm tra số nguyên tố đạt chuẩn Production ngay lập tức
+
+3. Phân tích tại sao các phương án còn lại không mang lại hiệu quả
+	Phương án A:
+Phương án này phủ nhận hoàn toàn vai trò trợ lý của AI và đi ngược lại tư duy đón đầu công nghệ. AI không thể đưa ra kết quả tối ưu tuyệt đối ngay lập tức nếu prompt ban đầu chưa đủ độ chi tiết hoặc chưa kích hoạt đúng vùng kiến thức chuyên sâu của nó. Việc bỏ cuộc làm lãng phí tài nguyên công nghệ và làm giảm hiệu suất làm việc của chính lập trình viên khi đối mặt với các bài toán quy mô lớn hơn
+
+	Phương án B:
+Việc mở một phiên chat mới làm đứt gãy ngữ cảnh (Context) đã xây dựng trước đó, khiến AI phải tính toán lại từ đầu. Thêm vào đó, việc chỉ thay đổi viết hoa/viết thường các từ khóa (Ví dụ: "Hãy TỐI ƯU code...") không cung cấp thêm bất kỳ một thông tin kỹ thuật hay logic mới nào cho AI. AI sẽ rơi vào vòng lặp sinh ra kết quả tương tự hoặc sinh ra một giải pháp ngẫu nhiên khác không đúng trọng tâm, gây lãng phí thời gian (Token) và gây ức chế cho người lập trình
